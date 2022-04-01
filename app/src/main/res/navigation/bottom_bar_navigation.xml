@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_bar_navigation"
+    app:startDestination="@id/teams_item">
+
+    <fragment
+        android:id="@+id/teams_item"
+        android:name="com.example.nbabettingapp.fragments.menu.TeamsFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_gamesFragment"
+            app:destination="@id/games_item" />
+        <action
+            android:id="@+id/action_teams_item_to_secondMainFragment"
+            app:destination="@id/secondMainFragment" />
+        <action
+            android:id="@+id/action_teams_item_to_statsFragment"
+            app:destination="@id/item_stats" />
+    </fragment>
+    <fragment
+        android:id="@+id/games_item"
+        android:name="com.example.nbabettingapp.fragments.menu.GamesFragment"
+        android:label="fragment_games"
+        tools:layout="@layout/fragment_games" >
+        <action
+            android:id="@+id/action_gamesFragment_to_mainFragment"
+            app:destination="@id/teams_item" />
+        <action
+            android:id="@+id/action_games_item_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+        <action
+            android:id="@+id/action_games_item_to_statsFragment"
+            app:destination="@id/item_stats" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondMainFragment"
+        android:name="com.example.nbabettingapp.fragments.subMenu.SecondMainFragment"
+        android:label="fragment_second_main"
+        tools:layout="@layout/fragment_second_main" >
+        <action
+            android:id="@+id/action_secondMainFragment_to_teams_item"
+            app:destination="@id/teams_item" />
+        <action
+            android:id="@+id/action_secondMainFragment_to_games_item"
+            app:destination="@id/games_item" />
+        <action
+            android:id="@+id/action_secondMainFragment_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+        <action
+            android:id="@+id/action_secondMainFragment_to_statsFragment"
+            app:destination="@id/item_stats" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.nbabettingapp.fragments.subMenu.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" >
+        <action
+            android:id="@+id/action_statisticsFragment_to_games_item"
+            app:destination="@id/games_item" />
+        <action
+            android:id="@+id/action_statisticsFragment_to_secondMainFragment"
+            app:destination="@id/secondMainFragment" />
+        <action
+            android:id="@+id/action_statisticsFragment_to_statsFragment"
+            app:destination="@id/item_stats" />
+    </fragment>
+    <fragment
+        android:id="@+id/item_stats"
+        android:name="com.example.nbabettingapp.fragments.menu.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_statsFragment_to_teams_item"
+            app:destination="@id/teams_item" />
+        <action
+            android:id="@+id/action_statsFragment_to_games_item"
+            app:destination="@id/games_item" />
+    </fragment>
+</navigation>
