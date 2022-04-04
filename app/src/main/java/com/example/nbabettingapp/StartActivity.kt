@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.core.content.ContextCompat
+import com.example.nbabettingapp.service.MyService
 import com.ldoublem.loadingviewlib.view.LVPlayBall
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
+
+        startService(Intent(this, MyService::class.java))
 
         findViewById<LVPlayBall>(R.id.ball_loader).apply {
             setViewColor(ContextCompat.getColor(this@StartActivity, R.color.green))
